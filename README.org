@@ -1,0 +1,131 @@
+#+title: Supreme Sexp System - SSS
+#+author: Josep Bigorra
+#+email: jjbigorra@gmail.com
+#+language: en
+
+[[https://jointhefreeworld.org/ggg/dist/scheme-guile.svg]] [[https://jointhefreeworld.org/ggg/dist/gnu-guix.svg]]  [[https://jointhefreeworld.org/ggg/dist/gnu-emacs.svg]]   [[https://jointhefreeworld.org/ggg/dist/shell-bash.svg]] 
+[[https://jointhefreeworld.org/ggg/dist/license-gpl3+.svg]]    [[https://jointhefreeworld.org/ggg/dist/license-fdl13+.svg]] [[https://jointhefreeworld.org/ggg/dist/i18n-gnu-gettext.svg]] [[https://jointhefreeworld.org/ggg/dist/jointhefreeworld-org.svg]] 
+
+SSS is a Lisp machine adventure, where the hacking culture is celebrated. Let me help you achieve /GNUrvana/.
+
+I have moved on to different projects and don't maintain this anymore, but this Guix system could be a great learning point for you.
+
+If you like my work, please support me by [[https://bmc.link/jjbigorra][buying me a cup of coffee ☕]] so I can continue with a lot of motivation.
+
+You can follow the project here on Codeberg, or on the fediverse at Mastodon: https://mastodon.social/@sss_project
+
+This custom GNU + Linux setup enhances customization to infinity, encourages the hacking spirit, and offers a superior user experience thanks in part too to REPL (Read Eval Print Loop) and Lisps.
+
+SSS strives to have all things configured via Lisp dialects when possible and convenient, staying accessible to all kinds of users, and allowing for magical things to happen 🪄.
+
+⚠️ Installing and managing SSS is not meant for people new to GNU/Linux systems. You should already have some experience with software development. Knowing Lisp dialects, or functional programming techniques is also a big help and is something you will learn further.
+
+Refer to the project's code of conduct here: [[https://jointhefreeworld.org/blog/articles/personal/jointhefreeworld-code-of-conduct/index.html][jointhefreeworld code of conduct]]
+
+Note: Screenshots below might be outdated and no longer representative of the current, ever-changing state of SSS.
+
+This screenshot is from version v4.1.5 with modus-vivendi palette:
+
+[[https://jointhefreeworld.org/static-assets/sss/screenshots/small-screen-2025-11-28-08-10-30.png]]
+
+This screenshot is from version v2.3.23 with ef-dream palette:
+
+[[https://jointhefreeworld.org/static-assets/sss/screenshots/7bdfaa50fbc45b63.png]]
+
+-----
+
+I would appreciate if you write your findings when using SSS and if you can, fork the project, and contribute some improvements, or mail me at <jjbigorra@gmail.com>
+
+It is recommended to use tagged releases of SSS, as those are considered as stable by the developers.
+
+
+* What lies here?
+
+** An entire system configured in Lisp
+
+- GNU Guix system configuration
+- GNU Guix home configurations
+- Advanced Emacs configurations and integration possibilities with Guix  + Elpaca
+- Guix channel so you can cherry-pick parts of SSS to your liking
+
+Some of the features:  
+- 🎨 Many theme palettes that affect the entire system 
+- Niri configuration (power user session)
+- Labwc configuration (universal session)
+- Bash and Fish shell configuration
+- Alacritty terminal emulator
+- Nyxt web browser (configured in Common Lisp)
+- Firefox custom declarative configuration inspired on BetterFox
+- Waybar configuration and style
+- Rofi application launcher
+- Mako configuration and style
+- A custom [[https://codeberg.org/jjba23/sss-help-center-gtk][tailor made help assistant for SSS - sss-help-center-gtk]]     
+- Fastfetch configuration
+- multi-user Git configuration setup (work/personal)
+- Useful [[https://codeberg.org/jjba23/maak][Maak]] file for managing your system
+
+  and more....
+  
+** Joe's Emacs configuration
+
+An operating system unto itself 🐂.
+
+- Advanced and modular Emacs configurations with Emacs Lisp + Elpaca
+- Dev setup for: Scheme, Scala, Haskell, Lisp, Rust, Python, Shell, Nix, JavaScript, CSS, Golang and more
+- Power user EShell configuration with many niceties  
+
+------------------
+
+* SSS Manuals
+
+I strive to provide proper and extensive documentation on the Supreme Sexp System (SSS), in several formats, available at your convenience.
+
+- Org format [[file:docs/manual/en.org]]
+- Online HTML at jointhefreeworld: [[https://jointhefreeworld.org/manuals/sss/index.html]] 
+
+------------------------  
+  
+* Licensing
+
+sss and all of its source code are free software, licensed under the GNU General Public License v3 (or newer at your convenience).
+
+https://www.gnu.org/licenses/gpl-3.0.html
+
+The documentation and examples, including this document, which are provided with sss, are all licensed under the GNU Free Documentation License v1.3 (or newer at your convenience).
+
+https://www.gnu.org/licenses/fdl-1.3.html
+
+--------
+
+* Code of conduct
+
+This project adheres to the jointhefreeworld code of conduct. Find it here:
+
+https://jointhefreeworld.org/blog/articles/personal/jointhefreeworld-code-of-conduct/index.html
+
+In summary, we foster an inclusive, respectful, and cooperative environment for all contributors and users of this free software project. Inspired by the ideals of the GNU Project, we strive to uphold freedom, equality, and community as guiding principles. We believe that collaboration in a community of mutual respect is essential to creating excellent free software.
+
+
+--------------
+
+* SSS Project
+
+Contributing to free software is a uniquely beautiful act because it embodies principles of generosity, collaboration, and empowerment.
+
+We welcome everyone to feel invited to the SSS Project, and encourage active contribution in all forms, to improve it and/or suggest improvements, brainstorm with me, make it more modular/flexible, etc, feel free to contact me <jjbigorra@gmail.com> to chat, discuss or report feedback.
+
+Find here the Backlog and Kanban boards for SSS: https://lucidplan.jointhefreeworld.org/tickets/sss
+
+----------
+
+* Project Changelog
+
+v1.x Initial Sway,  Move to Wayland,  Stumpwm X11 setup
+
+v2.0.0 Major code refactor (Sway) - v2.3.35
+
+v3.0.0 Hyprland window manager (dropped Sway support) - v3.4.16
+
+after v3  (dropped Hyprland and Hypr ecosystem support)
+
+v4.0.0 Niri WM
