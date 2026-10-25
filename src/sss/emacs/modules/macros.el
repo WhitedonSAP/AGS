@@ -24,24 +24,22 @@
 ;;; Code:
 
 (defun kbd-scheme-hygguile-abstraction ()
-  "Replace a (selected) string that is a whitespace separated list of CSS classes by a hygguile class set."
+  "Replace the active region (CSS classes) with a hygguile class set."
   (interactive)
-  (kill-region 10305 10346 'region)
-  (backward-char 1)
-  (delete-char 1 nil)
-  (delete-char 1 nil)
-  (insert ",(mk-class '(")
-  (yank nil)
-  (insert "))"))
+  (if (use-region-p)
+      (let ((content (buffer-substring-no-properties (region-beginning) (region-end))))
+        (delete-region (region-beginning) (region-end))
+        (insert (format ",(mk-class '(%s))" content)))
+    (user-error "Select a text region before running the macro")))
 
 (defun kbd-scheme-make-parameter ()
-  "Replace a (selected) value by a (make-parameter ~a).
-Useful for libraries where you want to allow users to redefine values."
+  "Replace the active region with (make-parameter <val>)."
   (interactive)
-  (kill-region 2350 2361 'region)
-  (insert "(make-parameter ")
-  (yank nil)
-  (insert ")"))
+  (if (use-region-p)
+      (let ((content (buffer-substring-no-properties (region-beginning) (region-end))))
+        (delete-region (region-beginning) (region-end))
+        (insert (format "(make-parameter %s)" content)))
+    (user-error "Select a text region before running the macro")))
 
 
 (provide 'sss/macros)
