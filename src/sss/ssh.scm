@@ -22,11 +22,11 @@
   #:export (ssh-capability))
 
 (define joe-ssh-hosts
-  (list (openssh-host (name "wolk-jjba")
-                      (user "joe")
-                      (host-name "37.60.232.48")
-                      (port 2323)
-                      (identity-file "~/.ssh/wolk-jjba"))
+  (list (openssh-host ;;(name "wolk-jjba")
+                      ;;(user "joe")
+                      ;;(host-name "37.60.232.48")
+                      ;;(port 2323)
+                      ;;(identity-file "~/.ssh/wolk-jjba"))
         (openssh-host (name "personal.github.com")
                       (user "joe")
                       (host-name "github.com")
