@@ -160,13 +160,13 @@
                                                          "emacs --daemon"))))))
 
 (define joe-shepherd-timers
-  (list (user-timer #:user 'joe
+  (list (user-timer #:user 'whitedon
                     #:name 'set-random-wallpaper
                     #:gexp #~(cron-string->calendar-event "*/10 * * * *"))
-        (user-timer #:user 'joe
+        (user-timer #:user 'whitedon
                     #:name 'remind-back-stretches
                     #:gexp #~(cron-string->calendar-event "15 9 * * 1-5"))
-        (user-timer #:user 'joe
+        (user-timer #:user 'whitedon
                     #:name 'remind-pushups-squats-situps
                     #:gexp #~(cron-string->calendar-event "45 12 * * 1-5"))))
 
