@@ -28,8 +28,8 @@
   :ensure t
   :after (f)
   :custom
-  (smudge-oauth2-client-secret (f-read-text "~/secrets/smudge-oauth2-client-secret"))
-  (smudge-oauth2-client-id (f-read-text "~/secrets/smudge-oauth2-client-id"))
+  (smudge-oauth2-client-secret (sss/safe-read-secret "smudge-oauth2-client-secret"))
+  (smudge-oauth2-client-id (sss/safe-read-secret "smudge-oauth2-client-id"))
   (smudge-player-use-transient-map t)
   :config
   (define-key smudge-mode-map (kbd "C-c .") 'smudge-command-map))
