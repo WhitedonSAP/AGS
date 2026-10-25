@@ -73,8 +73,7 @@
                    (waybar-capability #:palette ($$$ 'palette)
                                       #:sans-font ($$$ 'sans-font)
                                       #:with-memory #f
-                                      #:labwc-session #t
-                                      #:sans-font ($$$ 'sans-font))
+                                      #:labwc-session #t)
                    (portals-capability)
                    (mako-capability #:palette ($$$ 'palette)
                                     #:sans-font ($$$ 'sans-font))
