@@ -21,6 +21,13 @@
 
 ;;; Code:
 
+(defun sss/safe-read-secret (filename)
+  "Read a file from ~/.secrets/FILENAME if readable, otherwise return empty string."
+  (let ((path (expand-file-name filename "~/.secrets/")))
+    (if (file-readable-p path)
+        (string-trim (f-read-text path))
+      "")))
+      
 (use-package transient :ensure t :after (compat))
 
 (use-package f :ensure t)
