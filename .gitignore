@@ -3,3 +3,9 @@ docs/emacs/*.html
 per-host/sss/overrides.scm
 .nrepl-port
 doc/
+.secrets/
+secrets/
+*.go
+*~
+\#*\#
+.#*
