@@ -32,14 +32,14 @@
     "dist-newstyle"))
 
 (define gitconfig-personal
-  `((user (name . "Josep Bigorra")
-          (email . "jjbigorra@gmail.com")
-          (signingkey . "24F46738CE114AF6"))))
+  `((user (name . "WhitedonSAP")
+          (email . "ayrtonarantes0987654321ayrt008@gmail.com")
+          (gpgsign . "false"))))
 
-(define gitconfig-work
-  `((user (name . "Josep Bigorra")
-          (email . "josepbigorraalgaba@vandebron.nl")
-          (signingkey . "3B6D20502E380697"))))
+;;(define gitconfig-work
+;;  `((user (name . "WhitedonSAP")
+;;          (email . "")
+;;          (signingkey . ""))))
 
 (define gitconfig
   `((core (editor . "emacsclient")
