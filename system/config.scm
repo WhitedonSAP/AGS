@@ -37,13 +37,10 @@
                      dbus
                      base
                      xorg
-                     desktop
                      configuration
                      avahi
                      nix
                      containers
-                     xorg
-                     networking
                      sound
                      cups
                      virtualization
@@ -56,7 +53,6 @@
                      lxqt
                      libusb
                      linux
-                     glib
                      sugar
                      suckless
                      scanner
