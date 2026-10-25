@@ -103,28 +103,22 @@
             (assoc-ref ansi-color-escapes
                        'reset)) ...))
 
-(define-syntax-rule (get-setting setting)
+(define (get-setting setting)
   "Get a setting for SSS, either from override or from default values."
-  (let* ((default-var-name (format #f "default-~a" setting))
-         (default (module-variable (resolve-module '(sss defaults))
-                                   (string->symbol default-var-name)))
-         (_ (catch #t
-                   (lambda ()
-                     (use-modules (sss overrides)))
-                   (lambda (key . args)
-                     (display (format #f
-                               "couldn't load SSS overrides, using defaults")))))
-         (user-override-var-name (format #f "override-~a" setting))
-         (user-override (module-variable (resolve-module '(sss overrides))
-                                         (string->symbol
-                                          user-override-var-name))))
-    (catch #t
-           (lambda ()
-             (if (equal? #f user-override)
-                 (variable-ref default)
-                 (variable-ref user-override)))
-           (lambda (key . args)
-             (variable-ref default)))))
+  (let* ((default-var-name (string->symbol (format #f "default-~a" setting)))
+         (override-var-name (string->symbol (format #f "override-~a" setting)))
+         (defaults-mod (resolve-module '(sss defaults)))
+         (overrides-mod (catch #t
+                               (lambda () (resolve-module '(sss overrides)))
+                               (lambda _ #f)))
+         (user-override (and overrides-mod
+                             (module-variable overrides-mod override-var-name))))
+    (if (and user-override (variable-bound? user-override))
+        (variable-ref user-override)
+        (let ((default (module-variable defaults-mod default-var-name)))
+          (if (and default (variable-bound? default))
+              (variable-ref default)
+              (error "Setting not found:" setting))))))
 
 (define-syntax-rule ($$$ setting)
   (get-setting setting))
