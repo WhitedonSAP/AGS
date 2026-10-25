@@ -48,7 +48,7 @@
 (define power-user-application-window-manager-keybindings
   '(("s-/" . "Launch application fuzzy finder menu (Rofi)")
     ("s-i" . "Open a Web Browser (Firefox)")
-    ("s-S-i" . "Open a bloated Web Browser (Chrome)")
+    ("s-S-i" . "Open a bloated Web Browser (Brave)")
     ("s-e" . "Open a new Emacs client frame")
     ("s-t" . "Open a terminal emulator (Alacritty)")
     ("s-S-t" . "Open a new Emacs client frame with EShell")
