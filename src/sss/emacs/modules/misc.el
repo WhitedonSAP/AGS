@@ -41,7 +41,7 @@
   (setq
    gptel-model 'gemini-pro
    gptel-backend (gptel-make-gemini "Gemini"
-                                    :key (lambda() (f-read-text "~/.secrets/gemini"))
+                                    :key (lambda () (sss/safe-read-secret "gemini"))
                                     :stream t)))
 
 
