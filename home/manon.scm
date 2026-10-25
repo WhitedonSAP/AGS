@@ -34,7 +34,6 @@
              (json)
              (sxml simple)
              (sss prelude)
-             (sss prelude)
              (sss git)
              (sss vars)
              (sss mako)

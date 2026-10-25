@@ -34,7 +34,6 @@
              (gnu home services desktop)
              (shepherd service timer)
              (sss prelude)
-             (sss prelude)
              (sss git)
              (sss vars)
              (sss mako)
