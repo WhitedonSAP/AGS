@@ -145,9 +145,9 @@
                       (with-capslock #f))
   (let ((modules-left (if labwc-session
                           #(custom/waybar-start-button clock wlr/taskbar)
-                          #(custom/waybar-start-button clock custom/media)))
+                          #(custom/waybar-start-button clock)))
         (modules-right (if labwc-session
-                           #(niri/language pulseaudio power-profiles-daemon custom/vkbd cpu memory backlight keyboard-state battery custom/power tray)
+                           #(pulseaudio power-profiles-daemon custom/vkbd cpu memory backlight keyboard-state battery custom/power tray)
                            #(niri/language pulseaudio power-profiles-daemon custom/vkbd cpu memory backlight keyboard-state battery custom/power tray))))
     `((position . bottom) (height . 38)
       (modules-left unquote modules-left)
