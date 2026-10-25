@@ -75,26 +75,26 @@ length of PATH (sans directory slashes) down to MAX-LEN."
     (concat str (cl-reduce (lambda (a b) (concat a "/" b)) components))))
 
 (defun sss-eshell-prompt ()
-  (defun with-face (str &rest face-plist)
-    (propertize str 'face face-plist))
-  (concat
-   "\n"
-   (with-face user-login-name :inherit 'font-lock-function-name-face)
-   "@"
-   (with-face (system-name) :inherit 'font-lock-function-name-face)
-   ": "
-   (with-face (if (string= (eshell/pwd) (getenv "HOME"))
-                  "~" (fish-path (eshell/pwd) 36))
-              :inherit 'font-lock-function-name-face)
-   ": "
-   (with-face
-    (or (ignore-errors (git-prompt-branch-name)) "")
-    :inherit 'font-lock-function-name-face)
-   "\n"
-   (if (= (user-uid) 0)
-       "#"
-     "λ")
-   " "))
+  (cl-flet ((with-face (str &rest face-plist)
+              (propertize str 'face face-plist)))
+    (concat
+     "\n"
+     (with-face user-login-name :inherit 'font-lock-function-name-face)
+     "@"
+     (with-face (system-name) :inherit 'font-lock-function-name-face)
+     ": "
+     (with-face (if (string= (eshell/pwd) (getenv "HOME"))
+                    "~" (fish-path (eshell/pwd) 36))
+                :inherit 'font-lock-function-name-face)
+     ": "
+     (with-face
+      (or (ignore-errors (git-prompt-branch-name)) "")
+      :inherit 'font-lock-function-name-face)
+     "\n"
+     (if (= (user-uid) 0)
+         "#"
+       "λ")
+     " ")))
 
 (setopt eshell-prompt-regexp "^[^#λ\n]*[#λ] ")
 (setopt eshell-prompt-function 'sss-eshell-prompt)
