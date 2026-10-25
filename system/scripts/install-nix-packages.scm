@@ -25,7 +25,7 @@
 (define (nix-profile-install x)
   (log-info (G_ "Installing Nix package: ~a") x)
   (syscall (format #f
-            "NIXPGS_ALLOW_UNFREE=1 nix -L profile install --impure nixpkgs#~a"
+            "NIXPKGS_ALLOW_UNFREE=1 nix -L profile install --impure nixpkgs#~a"
             x)))
 
 (for-each (lambda (x)

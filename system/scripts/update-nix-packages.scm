@@ -23,4 +23,4 @@
 (setup-i18n)
 
 (log-info (G_ "Updating Nix packages in user profile"))
-(syscall "NIXPGS_ALLOW_UNFREE=1 nix profile upgrade --impure '.*'")
+(syscall "NIXPKGS_ALLOW_UNFREE=1 nix profile upgrade --impure '.*'")
