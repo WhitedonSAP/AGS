@@ -22,40 +22,19 @@
 (setup-i18n)
 
 (define clone-repos
-  (make-parameter '(byggsteg carvoeiro-water-fun
-                             cloud-infra
-                             dagboek.el
-                             free-alacarte
-                             git-riddance.el
-                             haskell-rank
-                             hygguile
-                             iter-vitae
-                             jointhefreeworld
-                             keuringsdienst
-                             kracht
-                             lucidplan
-                             modusregel
-                             orgwebalchemy
-                             pop-server
-                             pop-test
-                             private-notes
-                             pingwing
-                             rostob
-                             scala-rank
-                             social-media-jjba
-                             static-assets
-                             tekengrootte.el
-                             web-welkomscherm
-                             welkomscherm.el
-                             wikimusic
-                             wolk-jjba
-                             zzspec)))
+  (make-parameter '(byggsteg AGS
+                             Gentoo-Linux-Installer
+                             Hyprland-dots
+                             LFS-Auto
+                             LFS-Auto-Repo
+                             Niri-dots
+                             OverDeepOS-Toolkit)))
 
 (define destination-folder
   (make-parameter "$HOME/hacking"))
 
 (define remote-url
-  (make-parameter "git@codeberg.org:jjba23"))
+  (make-parameter "git@github.com:WhitedonSAP"))
 
 (log-info (G_ "Cloning user's Git repositories"))
 
