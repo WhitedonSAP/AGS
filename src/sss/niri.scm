@@ -217,10 +217,10 @@
              #:cmd (spawn-sh "alacritty -e emacsclient -t"))
         (bnd #:mod "s"
              #:bind "I"
-             #:cmd (spawn-sh "flatpak run com.brave.Browser"))
+             #:cmd (spawn-sh "firefox"))
         (bnd #:mod "s-S"
              #:bind "I"
-             #:cmd (spawn-sh "firefox"))
+             #:cmd (spawn-sh "flatpak run com.brave.Browser"))
         (bnd #:mod "s"
              #:bind "B"
              #:cmd (spawn-sh "nautilus -w"))
