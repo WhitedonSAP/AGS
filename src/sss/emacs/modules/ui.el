@@ -281,7 +281,7 @@ According to size, color and font family"
   (add-hook 'server-after-make-frame-hook #'new-frame-setup)
   (add-hook 'after-make-frame-functions (lambda (f) (with-selected-frame f (new-frame-setup))))
   (unless (daemonp)
-    (new-frame-setup))
+    (new-frame-setup)))
 
 (use-package nerd-icons :ensure t)
 
