@@ -100,10 +100,10 @@
                    (mako-capability #:palette ($$$ 'palette)
                                     #:sans-font ($$$ 'sans-font))
                    (emacs-capability #:palette ($$$ 'palette)
-                                     #:user-name "Joe"
-                                     #:user-full-name "Josep Bigorra"
-                                     #:user-initials "JJBA"
-                                     #:user-email "jjbigorra@gmail.com"
+                                     #:user-name "Whitedon"
+                                     #:user-full-name "WhitedonSAP"
+                                     #:user-initials "WSAP"
+                                     #:user-email "ayrtonarantes0987654321ayrt008@gmail.com"
                                      #:clone-dir ($$$ 'clone-dir)
                                      #:notes-roam-dir
                                      "$HOME/hacking/private-notes/roam"
@@ -180,7 +180,7 @@
                                            #:clone-dir ($$$ 'clone-dir)
                                            #:lang ($$$ 'lang)
                                            #:extra-vars `(("GH_PACKAGES_USERNAME" . "jjbavdb")
-                                                          ("GH_PACKAGES_TOKEN" . "$(/home/joe/.nix-profile/bin/gh auth token)")))
+                                                          ("GH_PACKAGES_TOKEN" . "$($HOME/.nix-profile/bin/gh auth token)")))
                  (bash-capability #:clone-dir ($$$ 'clone-dir)
                                   #:gui-cmd "dbus-run-session niri --session")
                  openpgp-capability
