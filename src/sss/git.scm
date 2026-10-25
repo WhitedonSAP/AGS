@@ -19,7 +19,7 @@
   #:declarative? #t
   #:use-module (gnu)
   #:use-module (sss prelude)
-  #:export (gitignore-global gitconfig-personal gitconfig-work gitconfig
+  #:export (gitignore-global gitconfig-personal gitconfig
                              git-capability))
 
 (define gitignore-global
@@ -33,46 +33,33 @@
 
 (define gitconfig-personal
   `((user (name . "WhitedonSAP")
-          (email . "ayrtonarantes0987654321ayrt008@gmail.com")
-          (gpgsign . "false"))))
-
-;;(define gitconfig-work
-;;  `((user (name . "WhitedonSAP")
-;;          (email . "")
-;;          (signingkey . ""))))
+          (email . "ayrtonarantes0987654321ayrt008@gmail.com"))
+    (commit (gpgsign . "false"))))
 
 (define gitconfig
   `((core (editor . "emacsclient")
           (excludesfile . "~/.gitignore-global"))
-    (commit (gpgsign . "true"))
+    (commit (gpgsign . "false"))
     (format (thread . "shallow"))
     (sendemail (thread . "no"))
     (pull (rebase . "false"))
-    ("includeIf \"gitdir:~/work/\"" ("  path" . "~/.gitconfig-work"))
     ("includeIf \"gitdir:~/hacking/\"" ("  path" . "~/.gitconfig-personal"))
     ("includeIf \"gitdir:~/fork/\"" ("  path" . "~/.gitconfig-personal"))
     ("includeIf \"gitdir:~/scratch/\"" ("  path" . "~/.gitconfig-personal"))))
 
 (define* (git-capability #:key (gitconfig gitconfig)
                          (gitconfig-personal gitconfig-personal)
-                         (gitconfig-work gitconfig-work)
                          (gitignore-global gitignore-global))
-  `( ;Global Git configuration
-     (".gitconfig" ,(plain-file "gitconfig.ini"
-                                (mk-rec-kv-conf-lines gitconfig
-                                                      #:template
-                                                      spaced-equal-conf-pair)))
+  `(;; Global Git configuration
+    (".gitconfig" ,(plain-file "gitconfig.ini"
+                               (mk-rec-kv-conf-lines gitconfig
+                                                     #:template
+                                                     spaced-equal-conf-pair)))
     ;; Personal Git configuration
     (".gitconfig-personal" ,(plain-file "gitconfig-personal.ini"
                                         (mk-rec-kv-conf-lines
                                          gitconfig-personal
                                          #:template spaced-equal-conf-pair)))
-    ;; Work Git configuration
-    (".gitconfig-work" ,(plain-file "gitconfig-work.ini"
-                                    (mk-rec-kv-conf-lines gitconfig-work
-                                     #:template spaced-equal-conf-pair)))
-
     ;; Global Git ignore
     (".gitignore-global" ,(plain-file "gitignore-global"
                                       (mk-lines gitignore-global)))))
-
